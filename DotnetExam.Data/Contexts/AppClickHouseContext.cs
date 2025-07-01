@@ -4,5 +4,5 @@ namespace DotnetExam.Data.Contexts;
 
 public class AppClickHouseContext(string connectionString)
 {
-    public ClickHouseConnection CreateConnection() => new ClickHouseConnection(connectionString);
+    public ClickHouseConnection CreateConnection() => new(connectionString);
 }

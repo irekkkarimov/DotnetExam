@@ -9,7 +9,7 @@ public static class AddDataExtensions
 {
     public static IServiceCollection AddDataConfigured(this IServiceCollection services, string clickhouseConnectionString)
     {
-        services.AddScoped<AppClickHouseContext>(_ => new AppClickHouseContext(clickhouseConnectionString));
+        services.AddSingleton<AppClickHouseContext>(_ => new AppClickHouseContext(clickhouseConnectionString));
         services.AddScoped<IClickHouseRepository<Note>, ClickHouseRepository<Note>>();
 
         return services;
